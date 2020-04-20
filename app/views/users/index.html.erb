@@ -33,7 +33,7 @@
 							</td>
 							<td>
 								<% if user != current_user %>
-									<%= render 'follow_button', user: user%>
+									<%= render 'users/follow_button', user: user%>
 								<% end %>
 							</td>
 							<td><%= link_to "Show", user_path(user.id) %></td>

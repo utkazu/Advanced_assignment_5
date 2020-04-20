@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   post 'favorites/:book_id/destroy' => 'favorites#destroy'
   post 'book_comments/:book_id/create' => 'book_comments#create'
   post 'book_comments/:book_comment_id/destroy' => 'book_comments#destroy'
+  post 'search' => 'search#search'
 end

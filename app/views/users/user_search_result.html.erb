@@ -1,8 +1,16 @@
-<% provide(:headline, @headline)%>
+<% provide(:condition, condition)%>
+<% provide(:content, content)%>
+<% provide(:search_method, search_method)%>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-			<h2><%= yield(:headline) %></h2>
+      <h2>検索条件</h2>
+      <p>
+        <%= yield(:condition) %>：　
+        <%= yield(:content) %> (<%= yield(:search_method) %>)
+      </p>
+
+      <h2>検索結果</h2>
 			<table class="table">
 				<thead>
 					<tr>
@@ -15,7 +23,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<% @users.each do |user| %>
+					<% users.each do |user| %>
 						<tr>
 							<td><%= attachment_image_tag user, :profile_image, format: 'jpeg', size: '50x50', fallback: "/images/no-image.jpg" %></td>
 							<td><%= user.name %></td>
